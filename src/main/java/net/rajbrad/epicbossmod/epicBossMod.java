@@ -27,6 +27,8 @@ import org.slf4j.Logger;
 @Mod(epicBossMod.MODID)
 public class epicBossMod
 {
+    //Cringe ass nae nae baby
+
     // Define mod id in a common place for everything to reference
     public static final String MODID = "epicbossmod";
     // Directly reference a slf4j logger
