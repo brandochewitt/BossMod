@@ -12,6 +12,10 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, EpicBossMod.MODID);
 
+    public static void register(IEventBus modEventBus){
+        ITEMS.register(modEventBus);
+    }
+
     public static final RegistryObject<Item> TROLLFACE = ITEMS.register("trollface",
             () -> new Item( new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
@@ -19,9 +23,7 @@ public class ModItems {
             () -> new Item( new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
 
-    public static void register(IEventBus modEventBus){
-        ITEMS.register(modEventBus);
-    }
+
 
 
 

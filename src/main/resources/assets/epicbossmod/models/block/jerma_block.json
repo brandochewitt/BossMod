@@ -1,0 +1,6 @@
+{
+  "parent": "bloc/cube_all",
+  "textures": {
+    "all": "epicbossmod:block/jerma_block"
+  }
+}
