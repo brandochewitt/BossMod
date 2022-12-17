@@ -2,16 +2,18 @@ package net.rajbrad.epicbossmod.networking;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraftforge.network.NetworkDirection;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.network.simple.SimpleChannel;
 import net.rajbrad.epicbossmod.EpicBossMod;
+import net.rajbrad.epicbossmod.networking.packet.DashC2SPacket;
 
 public class ModMessages {
     private static SimpleChannel INSTANCE;
 
     private static int packetId = 0;
-    private static int Id(){
+    private static int id(){
         return packetId++;
     }
 
@@ -24,6 +26,12 @@ public class ModMessages {
                 .simpleChannel();
 
         INSTANCE = net;
+
+        net.messageBuilder(DashC2SPacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
+                .decoder(DashC2SPacket::new)
+                .encoder(DashC2SPacket::toBytes)
+                .consumerMainThread(DashC2SPacket::handle)
+                .add();
     }
 
     public static <MSG> void sendToServer(MSG message) {
