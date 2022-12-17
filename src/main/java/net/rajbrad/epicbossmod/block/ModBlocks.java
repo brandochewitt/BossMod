@@ -24,7 +24,7 @@ public class ModBlocks {
     //DECLARING BLOCKS:
 
     public static final RegistryObject<Block> JERMA_BLOCK = registerBlock("jerma_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(1f)), ModCreativeModeTab.EPICBOSS_TAB);
+            () -> new Block(BlockBehaviour.Properties.of(Material.EXPLOSIVE).strength(1f)), ModCreativeModeTab.EPICBOSS_TAB);
 
 
 
