@@ -1,12 +1,10 @@
 package net.rajbrad.epicbossmod.event;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.client.event.MovementInputUpdateEvent;
 import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
 import net.minecraftforge.event.TickEvent;
@@ -23,46 +21,46 @@ public class ClientEvents {
         @SubscribeEvent
         public static void onKeyInput(MovementInputUpdateEvent event) {
             Player player = event.getEntity();
-            if(event.getInput().up == true && event.getInput().left == true && cooldown ==0 && ModKeyBindings.DASH_KEY.isDown()){
+            if(event.getInput().up && event.getInput().left && cooldown ==0 && ModKeyBindings.DASH_KEY.isDown()){
                 Vec3 viewVector = player.getViewVector(1);
                 Vec3 dash = new Vec3((viewVector.x())*(Math.cos(-45))-(viewVector.z())*(Math.sin(-45)),
                         0.3f,(viewVector.x())*(Math.sin(-45))+(viewVector.z()*Math.cos(-45)));
                 player.setDeltaMovement(dash);
                 cooldown = 40;
-            }else if(event.getInput().up == true && event.getInput().right == true && cooldown ==0 && ModKeyBindings.DASH_KEY.isDown()) {
+            }else if(event.getInput().up && event.getInput().right && cooldown ==0 && ModKeyBindings.DASH_KEY.isDown()) {
                 Vec3 viewVector = player.getViewVector(1);
                 Vec3 dash = new Vec3((viewVector.x()) * (Math.cos(45)) - (viewVector.z()) * (Math.sin(45)),
                         0.3f, (viewVector.x()) * (Math.sin(45)) + (viewVector.z() * Math.cos(45)));
                 player.setDeltaMovement(dash);
                 cooldown = 40;
-            }else if(event.getInput().down == true && event.getInput().left == true && cooldown ==0 && ModKeyBindings.DASH_KEY.isDown()) {
+            }else if(event.getInput().down && event.getInput().left && cooldown ==0 && ModKeyBindings.DASH_KEY.isDown()) {
                 Vec3 viewVector = player.getViewVector(1);
                 Vec3 dash = new Vec3(-((viewVector.x()) * (Math.cos(45)) - (viewVector.z()) * (Math.sin(45))),
                         0.3f, -((viewVector.x()) * (Math.sin(45)) + (viewVector.z() * Math.cos(45))));
                 player.setDeltaMovement(dash);
                 cooldown = 40;
-            }else if(event.getInput().down == true && event.getInput().right == true && cooldown ==0 && ModKeyBindings.DASH_KEY.isDown()) {
+            }else if(event.getInput().down && event.getInput().right && cooldown ==0 && ModKeyBindings.DASH_KEY.isDown()) {
                 Vec3 viewVector = player.getViewVector(1);
                 Vec3 dash = new Vec3(-((viewVector.x()) * (Math.cos(-45)) - (viewVector.z()) * (Math.sin(-45))),
                         0.3f, -((viewVector.x()) * (Math.sin(-45)) + (viewVector.z() * Math.cos(-45))));
                 player.setDeltaMovement(dash);
                 cooldown = 40;
-            }else if (event.getInput().up == true && cooldown ==0 && ModKeyBindings.DASH_KEY.isDown()) {
+            }else if (event.getInput().up && cooldown ==0 && ModKeyBindings.DASH_KEY.isDown()) {
                 Vec3 viewVector = player.getViewVector(1);
                 Vec3 dash = new Vec3(viewVector.x(), 0.3f, viewVector.z());
                 player.setDeltaMovement(dash);
                 cooldown = 40;
-            }else if (event.getInput().down == true && cooldown ==0 && ModKeyBindings.DASH_KEY.isDown()) {
+            }else if (event.getInput().down && cooldown ==0 && ModKeyBindings.DASH_KEY.isDown()) {
                 Vec3 viewVector = player.getViewVector(1);
                 Vec3 dash = new Vec3(-viewVector.x(), 0.3f, -viewVector.z());
                 player.setDeltaMovement(dash);
                 cooldown = 40;
-            }else if (event.getInput().left == true && cooldown ==0 && ModKeyBindings.DASH_KEY.isDown()) {
+            }else if (event.getInput().left && cooldown ==0 && ModKeyBindings.DASH_KEY.isDown()) {
                 Vec3 viewVector = player.getViewVector(1);
                 Vec3 dash = new Vec3(viewVector.z(), 0.3f, -viewVector.x());
                 player.setDeltaMovement(dash);
                 cooldown = 40;
-            }else if (event.getInput().right == true && cooldown ==0 && ModKeyBindings.DASH_KEY.isDown()) {
+            }else if (event.getInput().right && cooldown ==0 && ModKeyBindings.DASH_KEY.isDown()) {
                 Vec3 viewVector = player.getViewVector(1);
                 Vec3 dash = new Vec3(-viewVector.z(), 0.3f, viewVector.x());
                 player.setDeltaMovement(dash);
