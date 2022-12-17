@@ -15,6 +15,9 @@ public class ModItems {
     public static final RegistryObject<Item> TROLLFACE = ITEMS.register("trollface",
             () -> new Item( new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
+    public static final RegistryObject<Item> RAW_TROLLFACE = ITEMS.register("raw_trollface",
+            () -> new Item( new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+
 
     public static void register(IEventBus modEventBus){
         ITEMS.register(modEventBus);
