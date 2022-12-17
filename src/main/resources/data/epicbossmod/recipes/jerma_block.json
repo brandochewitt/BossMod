@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "block",
+  "key": {
+    "#": {
+      "item": "epicbossmod:little_jerma"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "epicbossmod:jerma_block"
+  }
+}

@@ -24,6 +24,9 @@ public class ModItems {
     public static final RegistryObject<Item> RAW_TROLLFACE = ITEMS.register("raw_trollface",
             () -> new Item( new Item.Properties().tab(ModCreativeModeTab.EPICBOSS_TAB)));
 
+    public static final RegistryObject<Item> LITTLE_JERMA = ITEMS.register("little_jerma",
+            () -> new Item( new Item.Properties().tab(ModCreativeModeTab.EPICBOSS_TAB)));
+
 
 
 
