@@ -1,9 +1,12 @@
 {
   "key.category.epicbossmod.based": "Based",
   "key.epicbossmod.dash": "Dash",
+
+  "ItemGroup.epicbosstab": "Epic Boss Mod",
+
   "item.epicbossmod.trollface": "Trollface",
   "item.epicbossmod.raw_trollface": "Raw Trollface",
-  "block.epicbossmod.jerma_block": "Jerma Block",
-  "ItemGroup.epicbosstab": "Epic Boss Mod",
-  "item.epicbossmod.little_jerma": "Little Jerma"
+  "item.epicbossmod.little_jerma": "Little Jerma",
+
+  "block.epicbossmod.jerma_block": "Jerma Block"
 }
