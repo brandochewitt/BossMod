@@ -16,16 +16,21 @@ public class ModItems {
         ITEMS.register(modEventBus);
     }
 
+    //DECLARING ITEMS:
+
     public static final RegistryObject<Item> TROLLFACE = ITEMS.register("trollface",
-            () -> new Item( new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+            () -> new Item( new Item.Properties().tab(ModCreativeModeTab.EPICBOSS_TAB)));
 
     public static final RegistryObject<Item> RAW_TROLLFACE = ITEMS.register("raw_trollface",
-            () -> new Item( new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+            () -> new Item( new Item.Properties().tab(ModCreativeModeTab.EPICBOSS_TAB)));
 
 
 
 
 
+
+
+    //ITEMS END.
 
 
 }

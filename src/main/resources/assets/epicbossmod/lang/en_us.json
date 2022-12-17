@@ -3,5 +3,6 @@
   "key.epicbossmod.dash": "Dash",
   "item.epicbossmod.trollface": "Trollface",
   "item.epicbossmod.raw_trollface": "Raw Trollface",
-  "block.epicbossmod.jerma_block": "Jerma Block"
+  "block.epicbossmod.jerma_block": "Jerma Block",
+  "ItemGroup.epicbosstab": "Epic Boss Mod"
 }
