@@ -7,6 +7,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.rajbrad.epicbossmod.EpicBossMod;
+import net.rajbrad.epicbossmod.item.custom.DowsingRodItem;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -26,6 +27,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> LITTLE_JERMA = ITEMS.register("little_jerma",
             () -> new Item( new Item.Properties().tab(ModCreativeModeTab.EPICBOSS_TAB)));
+
+    public static final RegistryObject<Item> DOWSING_ROD = ITEMS.register("dowsing_rod",
+            () -> new DowsingRodItem( new Item.Properties().tab(ModCreativeModeTab.EPICBOSS_TAB)));
 
 
 
