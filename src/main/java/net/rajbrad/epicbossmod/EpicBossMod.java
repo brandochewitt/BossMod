@@ -18,6 +18,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.rajbrad.epicbossmod.block.ModBlocks;
 import net.rajbrad.epicbossmod.item.ModItems;
+import net.rajbrad.epicbossmod.networking.ModMessages;
 import org.slf4j.Logger;
 
 @Mod(EpicBossMod.MODID)
@@ -64,6 +65,10 @@ public class EpicBossMod
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
+        event.enqueueWork(() ->{
+
+        });
+        ModMessages.register();
         LOGGER.info("HELLO FROM COMMON SETUP");
         LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
     }
