@@ -12,6 +12,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.rajbrad.epicbossmod.EpicBossMod;
+import net.rajbrad.epicbossmod.block.custom.SpeedyBlock;
 import net.rajbrad.epicbossmod.item.ModCreativeModeTab;
 import net.rajbrad.epicbossmod.item.ModItems;
 
@@ -28,6 +29,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> AWARE_BLOCK = registerBlock("aware_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.EXPLOSIVE).strength(1f)), ModCreativeModeTab.EPICBOSS_TAB);
+
+    public static final RegistryObject<Block> SPEED_BLOCK = registerBlock("speed_block",
+            () -> new SpeedyBlock(BlockBehaviour.Properties.of(Material.EXPLOSIVE).strength(1f)), ModCreativeModeTab.EPICBOSS_TAB);
 
 
 
