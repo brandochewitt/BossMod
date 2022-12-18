@@ -8,10 +8,13 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.MovementInputUpdateEvent;
 import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
 import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.rajbrad.epicbossmod.EpicBossMod;
 
+import net.rajbrad.epicbossmod.entity.ModEntityTypes;
+import net.rajbrad.epicbossmod.entity.custom.JermaGolemEntity;
 import net.rajbrad.epicbossmod.util.ModKeyBindings;
 
 public class ClientEvents {
@@ -80,6 +83,11 @@ public class ClientEvents {
                 --cooldown;
             }
         }
+    }
+
+    @SubscribeEvent
+    public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
+        event.put(ModEntityTypes.JERMA_GOLEM.get(), JermaGolemEntity.setAttributes());
     }
 
     @Mod.EventBusSubscriber(modid = EpicBossMod.MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)

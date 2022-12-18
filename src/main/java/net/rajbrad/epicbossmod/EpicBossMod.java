@@ -1,6 +1,8 @@
 package net.rajbrad.epicbossmod;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -11,12 +13,15 @@ import net.minecraft.world.level.material.Material;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.rajbrad.epicbossmod.block.ModBlocks;
+import net.rajbrad.epicbossmod.entity.ModEntityTypes;
+import net.rajbrad.epicbossmod.entity.client.JermaGolemRenderer;
 import net.rajbrad.epicbossmod.item.ModItems;
 import net.rajbrad.epicbossmod.networking.ModMessages;
 import org.slf4j.Logger;
@@ -57,11 +62,20 @@ public class EpicBossMod
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModEntityTypes.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
     }
+    private void clientSetup(final FMLClientSetupEvent event){
+
+
+
+        EntityRenderers.register(ModEntityTypes.JERMA_GOLEM.get(), JermaGolemRenderer::new);
+    }
+
+
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
