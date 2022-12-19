@@ -18,6 +18,6 @@ public class JermaGolemModel extends AnimatedGeoModel<JermaGolemEntity> {
 
     @Override
     public ResourceLocation getAnimationResource(JermaGolemEntity animatable) {
-        return new ResourceLocation(EpicBossMod.MODID, "animations/jerma_model.animation.json");
+        return new ResourceLocation(EpicBossMod.MODID, "animations/jerma_golem.animation.json");
     }
 }

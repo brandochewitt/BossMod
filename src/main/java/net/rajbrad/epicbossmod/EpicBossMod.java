@@ -26,6 +26,8 @@ import net.rajbrad.epicbossmod.item.ModItems;
 import net.rajbrad.epicbossmod.networking.ModMessages;
 import org.slf4j.Logger;
 
+import javax.swing.text.html.parser.Entity;
+
 @Mod(EpicBossMod.MODID)
 public class EpicBossMod
 {
@@ -65,16 +67,14 @@ public class EpicBossMod
         ModEntityTypes.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(this::clientSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
     }
+
     private void clientSetup(final FMLClientSetupEvent event){
-
-
-
-        EntityRenderers.register(ModEntityTypes.JERMA_GOLEM.get(), JermaGolemRenderer::new);
+        EntityRenderers.register(ModEntityTypes.JERMA_GOLEM.get(), JermaGolemRenderer :: new);
     }
-
 
 
     private void commonSetup(final FMLCommonSetupEvent event)

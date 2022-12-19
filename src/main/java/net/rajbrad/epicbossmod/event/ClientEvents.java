@@ -85,10 +85,6 @@ public class ClientEvents {
         }
     }
 
-    @SubscribeEvent
-    public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
-        event.put(ModEntityTypes.JERMA_GOLEM.get(), JermaGolemEntity.setAttributes());
-    }
 
     @Mod.EventBusSubscriber(modid = EpicBossMod.MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class ClientModBusEvents {
