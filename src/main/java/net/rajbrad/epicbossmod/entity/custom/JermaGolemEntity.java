@@ -28,6 +28,7 @@ import software.bernie.geckolib3.core.AnimationState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
@@ -43,8 +44,8 @@ public class JermaGolemEntity extends Animal implements IAnimatable {
     public static AttributeSupplier setAttributes() {
         return Animal.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 40.00)
-                .add(Attributes.ATTACK_DAMAGE, 4.0f)
-                .add(Attributes.ATTACK_SPEED, 1.5f)
+                .add(Attributes.ATTACK_DAMAGE, 6.0f)
+                .add(Attributes.ATTACK_SPEED, 3f)
                 .add(Attributes.MOVEMENT_SPEED, 0.5f).build();
     }
     protected void registerGoals() {
@@ -97,7 +98,7 @@ public class JermaGolemEntity extends Animal implements IAnimatable {
         return 0.2F;
     }
 
-     private PlayState attackPredicate(AnimationEvent event) {
+     public PlayState attackPredicate(AnimationEvent event) {
         if(this.swinging && event.getController().getAnimationState().equals(AnimationState.Stopped)) {
             event.getController().markNeedsReload();
             event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.model.attack", false));
@@ -107,9 +108,10 @@ public class JermaGolemEntity extends Animal implements IAnimatable {
         return PlayState.CONTINUE;
     }
 
-    private <E extends IAnimatable> PlayState walkingPredicate(AnimationEvent<E> event) {
-        if (event.isMoving()) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.model.CrazyWalk", true));
+    public <E extends IAnimatable> PlayState walkingPredicate(AnimationEvent<E> event) {
+        if (event.isMoving() && event.getController().getAnimationState().equals(AnimationState.Stopped) ) {
+            event.getController().markNeedsReload();
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.model.CrazyWalk", false));
             return PlayState.CONTINUE;
         }
 
@@ -120,6 +122,8 @@ public class JermaGolemEntity extends Animal implements IAnimatable {
 
     @Override
     public void registerControllers(AnimationData data) {
+        data.addAnimationController(new AnimationController(this, "walking_controller", 0, this::walkingPredicate));
+        data.addAnimationController(new AnimationController(this, "attack_controller", 0, this::attackPredicate));
 
     }
 

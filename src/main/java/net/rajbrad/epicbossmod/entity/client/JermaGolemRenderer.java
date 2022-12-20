@@ -19,14 +19,14 @@ public class JermaGolemRenderer extends GeoEntityRenderer<JermaGolemEntity> {
 
     @Override
     public ResourceLocation getTextureLocation(JermaGolemEntity instance) {
-        return new ResourceLocation(EpicBossMod.MODID, "textures/entity/raccoon/raccoon.png");
+        return new ResourceLocation(EpicBossMod.MODID, "textures/entity/jerma_golem/jerma_golem.png");
     }
 
     @Override
     public RenderType getRenderType(JermaGolemEntity animatable, float partialTicks, PoseStack stack,
                                     MultiBufferSource renderTypeBuffer, VertexConsumer vertexBuilder, int packedLightIn,
                                     ResourceLocation textureLocation) {
-        stack.scale(1F, 1F, 1F);
+        stack.scale(1.5F, 1.5F, 1.5F);
         return super.getRenderType(animatable, partialTicks, stack, renderTypeBuffer, vertexBuilder, packedLightIn, textureLocation);
     }
 }
