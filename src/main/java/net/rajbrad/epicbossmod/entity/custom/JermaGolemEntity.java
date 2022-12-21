@@ -43,9 +43,9 @@ public class JermaGolemEntity extends Animal implements IAnimatable {
 
     public static AttributeSupplier setAttributes() {
         return Animal.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 40.00)
-                .add(Attributes.ATTACK_DAMAGE, 6.0f)
-                .add(Attributes.ATTACK_SPEED, 3f)
+                .add(Attributes.MAX_HEALTH, 200.00f)
+                .add(Attributes.ATTACK_DAMAGE, 25.0f)
+                .add(Attributes.ATTACK_SPEED, 5f)
                 .add(Attributes.MOVEMENT_SPEED, 0.5f).build();
     }
     protected void registerGoals() {
